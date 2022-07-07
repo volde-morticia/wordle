@@ -2,6 +2,7 @@ import random
 from colorama import Fore, Style
 from os import system
 from time import sleep
+from PyDictionary import PyDictionary
 
 
 words = ["S H A K Y", "C L U M P", "S L A S H", "C L A C K", "S C I O N", "B I G O T", "C R U E L", "S Q U A D", "S H R U G", "C R A Z E", "S A U C E", "S T U N K", "P U L S E", "I N L A Y", "G L E A N", "E D G E D", "H A V O C", "E A V E S", "D A N C E", "S P O R E", "S P I T E", "T R U C E", "E X I S T", "Q U I C K", "D R E A M", "P R O X Y", "S O B E R"]
@@ -20,6 +21,15 @@ __ __ _____ _ _ __| | |___
 ''')
 
 
+# function to check whether it's a real word
+def check_if_real(guess):
+    dictionary = PyDictionary()
+    if dictionary.meaning(guess,True) is None:
+      return False
+    else:
+      return True
+      
+
 # function to accept the input
 def word_input ():
   x = 0
@@ -30,8 +40,11 @@ def word_input ():
     if length != 5:
       print("You can't enter a word that isn't\nexactly 5 letters! smh\n")
     else:
-      x = 1
-      return(guess)
+      if check_if_real(guess) == False:
+        print("That's not a real word. smh.\n")
+      else:
+        x = 1
+        return(guess)
 
 
 def game():
@@ -86,7 +99,7 @@ def game():
     if tries_left == 0:
       print(f"The word is {word}.\nLooks like you suck at this game!\nDo you even know any words?\nIt's just five letters it's really\nnot that hard.\n")
 
-  again = input("Wanna try again with a different word?\nType YES or NO\n").upper()
+  again = input("Try again with a different word?\nType YES or NO\n").upper()
   if again == "YES":
     print()
     print("Okay, I'll try to go easy on you this time.\n")
@@ -154,6 +167,6 @@ __ __ _____ _ _ __| | |___
 ''')
 options()
 
+
 # to add:
-# checking whether the input is a real word
 # if the letter exists only once, highlight it only once and not twice
