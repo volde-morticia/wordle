@@ -1,8 +1,22 @@
 import random
 from colorama import Fore, Style
+from os import system
+from time import sleep
 
 
 words = ["S H A K Y", "C L U M P", "S L A S H", "C L A C K", "S C I O N", "B I G O T", "C R U E L", "S Q U A D", "S H R U G", "C R A Z E", "S A U C E", "S T U N K", "P U L S E", "I N L A Y", "G L E A N", "E D G E D", "H A V O C", "E A V E S", "D A N C E", "S P O R E", "S P I T E", "T R U C E", "E X I S T", "Q U I C K", "D R E A M", "P R O X Y", "S O B E R"]
+
+# to clear the console
+def clear():
+  sleep(1)
+  _ = system('clear')
+  print('''
+                    _ _     
+__ __ _____ _ _ __| | |___ 
+\ V  V / _ \ '_/ _` | / -_)
+ \_/\_/\___/_| \__,_|_\___|
+               
+''')
 
 
 # function to accept the input
@@ -53,8 +67,10 @@ def game():
       
     tries_left -= 1
     blanks[5-tries_left] = guess_list
-        
-  # printing the full list
+
+    clear()
+    
+    # printing the full list
     for a in range(0,6):
       for b in range(0,5):
         print(blanks[a][b] + " ", end = '')
@@ -73,6 +89,7 @@ def game():
   if again == "YES":
     print()
     print("Okay, I'll try to go easy on you this time.\n")
+    clear()
     print('''
 _ _ _ _ _
 _ _ _ _ _
@@ -84,8 +101,8 @@ _ _ _ _ _
 ''')
     game()
   else:
-    print()
-    print("Thanks for playing!\nThis Wordle knock-off was made by\nMaryam <3 If you have any feedback\nlet her know!")
+    clear()
+    print("Thanks for playing!\n\nThis Wordle knock-off was made by\nMaryam <3\n\nIf you have any feedback\nlet her know!")
 
     
 # options to either start the game or to view instructions
@@ -100,14 +117,18 @@ start  -  start the game
   if option == "?":
     green = Fore.GREEN + "green"
     yellow = Fore.YELLOW + "yellow"
+    clear()
+    print("HOW TO PLAY:\n")
     print(f"Guess the word in SIX tries.\nEach guess must be a 5-letter word.\nHit enter to submit the word.\n\nIf the colour of a letter is {yellow}", end = '')
     print(Style.RESET_ALL, end = '')
     print(f",\nit exists in the word in a different\nspot.\nIf the colour of a letter is {green}", end = '')
     print(Style.RESET_ALL, end = '')
-    print(",\nit exists in the word at the same\nspot.\n")
+    print(",\nit exists in the word at the same\nspot.")
+    print("If a letter is neither of those\ncolours, it doesn't exist in the\nword.\n")
     option = input("Enter START to start the game.\n\n").upper()
 
   if option == "START":
+    clear()
     print('''
 _ _ _ _ _
 _ _ _ _ _
