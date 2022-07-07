@@ -6,6 +6,7 @@ from time import sleep
 
 words = ["S H A K Y", "C L U M P", "S L A S H", "C L A C K", "S C I O N", "B I G O T", "C R U E L", "S Q U A D", "S H R U G", "C R A Z E", "S A U C E", "S T U N K", "P U L S E", "I N L A Y", "G L E A N", "E D G E D", "H A V O C", "E A V E S", "D A N C E", "S P O R E", "S P I T E", "T R U C E", "E X I S T", "Q U I C K", "D R E A M", "P R O X Y", "S O B E R"]
 
+
 # to clear the console
 def clear():
   sleep(1)
@@ -90,8 +91,7 @@ def game():
     print()
     print("Okay, I'll try to go easy on you this time.\n")
     clear()
-    print('''
-_ _ _ _ _
+    print('''_ _ _ _ _
 _ _ _ _ _
 _ _ _ _ _
 _ _ _ _ _
@@ -102,7 +102,7 @@ _ _ _ _ _
     game()
   else:
     clear()
-    print("Thanks for playing!\n\nThis Wordle knock-off was made by\nMaryam <3\n\nIf you have any feedback\nlet her know!")
+    print("Thanks for playing! <3\n\nFollow me on Github:\nhttps://github.com/volde-morticia\n\nIf you have any feedback\nlet me know!")
 
     
 # options to either start the game or to view instructions
@@ -129,8 +129,7 @@ start  -  start the game
 
   if option == "START":
     clear()
-    print('''
-_ _ _ _ _
+    print('''_ _ _ _ _
 _ _ _ _ _
 _ _ _ _ _
 _ _ _ _ _
@@ -155,6 +154,6 @@ __ __ _____ _ _ __| | |___
 ''')
 options()
 
+# to add:
 # checking whether the input is a real word
 # if the letter exists only once, highlight it only once and not twice
-# clear console after each input
