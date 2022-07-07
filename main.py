@@ -10,7 +10,6 @@ words = ["S H A K Y", "C L U M P", "S L A S H", "C L A C K", "S C I O N", "B I G
 
 # to clear the console
 def clear():
-  sleep(1)
   _ = system('clear')
   print('''
                     _ _     
